@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        h3{margin:0;}
+        .light{background:#ceb6da;}
+        .elevator{left:34.5px;top:50%;margin-top:-45px;position:fixed;z-index:5;  }
+        .elevator li {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            overflow: hidden;
+            margin-top: -1px;
+            cursor: pointer;
+        }
+        .elevator li a {
+            display: block;
+            height: 30px;
+            margin: 0 auto;
+            color: #625351;
+            font-size: 14px;
+        }
+        .elevator li .title {
+            display: none;
+            height: 30px;
+            color:#0E83E9;
+            font-size: 12px;
+            text-align:center;
+            background-color:#f5f5f5;
+        }
+        .items{
+            width: 692px;
+            border: 1px solid #eee;border-radius: 4px;
+            margin-top: 30px;
+            margin-left:auto;margin-right: auto;position: relative}
+        .myHidden{height: 400px;overflow: hidden}
+        .footer{position: absolute;bottom: 0;height: 30px;line-height: 30px;width: 690px;background-color: #CCCCCC;border-radius: 2px}
+        .read{float: right;margin-right: 20px;cursor: pointer}
+        img{display: block;margin-left: auto;margin-right: auto!important;}
+
+        .border{border: 1px solid red}
+        .footer>span:first-child{font-size: 20px;color: red;}
+    </style>
+</head>
+<body>
+<div style="height:200px;">
+    <h1  id="first">滚动耗事件</h1>
+</div>
+<div class="elevator" id="elevator">
+    <ul>
+        <li class="handler">
+            <a href="javascript:;">1</a>
+            <a class="title" href="javascript:;">牛油果棒冰</a>
+        </li>
+        <li class="handler">
+            <a href="javascript:;">2</a>
+            <a class="title" href="javascript:;">水果沙拉棒冰</a>
+        </li>
+        <li class="handler">
+            <a href="javascript:;">3</a>
+            <a class="title" href="javascript:;">奇异果棒冰</a>
+        </li>
+        <li class="handler">
+            <a href="javascript:;">4</a>
+            <a class="title" href="javascript:;">夏日西瓜棒冰</a>
+        </li>
+    </ul>
+</div>
+<div class="items myHidden" id="d1">
+    <h3>1、牛油果棒冰</h3>
+    <div class="body">
+        <h4>1.1牛油果棒冰 Avocado Ice Pop</h4>
+        <div>
+            <img src="img/1.1.jpg" alt=""/>
+        </div>
+        <h4>1.2水果沙拉棒冰 Fruit Salad Ice Pop</h4>
+        <div>
+            <img src="img/1.2.jpg" alt=""/>
+        </div>
+        <h4>1.3奇异果棒冰 Kiwi Ice Pop</h4>
+        <div>
+            <img src="img/1.3.jpg" alt=""/>
+        </div>
+        <h4>1.4夏日西瓜棒冰 Watermelon Ice Pop</h4>
+        <div>
+            <img src="img/1.4.jpg" alt=""/>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span>1</span>
+        <span class="read" id="a" onclick="read(this)">阅读全文</span>
+    </div>
+</div>
+<div class="items myHidden" id="d2">
+    <h3>2、水果沙拉棒冰</h3>
+    <div class="body">
+        <h4>1.1牛油果棒冰 Avocado Ice Pop</h4>
+        <div>
+            <img src="img/1.1.jpg" alt=""/>
+        </div>
+        <h4>1.2水果沙拉棒冰 Fruit Salad Ice Pop</h4>
+        <div>
+            <img src="img/1.2.jpg" alt=""/>
+        </div>
+        <h4>1.3奇异果棒冰 Kiwi Ice Pop</h4>
+        <div>
+            <img src="img/1.3.jpg" alt=""/>
+        </div>
+        <h4>1.4夏日西瓜棒冰 Watermelon Ice Pop</h4>
+        <div>
+            <img src="img/1.4.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="footer">
+        <span>2</span>
+        <span class="read" onclick="read(this)">阅读全文</span>
+    </div>
+</div>
+<div class="items myHidden" id="d3">
+    <h3>3、奇异果棒冰</h3>
+    <div class="body">
+        <h4>1.1牛油果棒冰 Avocado Ice Pop</h4>
+        <div>
+            <img src="img/1.1.jpg" alt=""/>
+        </div>
+        <h4>1.2水果沙拉棒冰 Fruit Salad Ice Pop</h4>
+        <div>
+            <img src="img/1.2.jpg" alt=""/>
+        </div>
+        <h4>1.3奇异果棒冰 Kiwi Ice Pop</h4>
+        <div>
+            <img src="img/1.3.jpg" alt=""/>
+        </div>
+        <h4>1.4夏日西瓜棒冰 Watermelon Ice Pop</h4>
+        <div>
+            <img src="img/1.4.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="footer">
+        <span>3</span>
+        <span class="read" onclick="read(this)">阅读全文</span>
+    </div>
+</div>
+<div class="items myHidden" id="d4">
+    <h3>4、夏日西瓜棒冰</h3>
+    <div class="body">
+        <h4>1.1牛油果棒冰 Avocado Ice Pop</h4>
+        <div>
+            <img src="img/1.1.jpg" alt=""/>
+        </div>
+        <h4>1.2水果沙拉棒冰 Fruit Salad Ice Pop</h4>
+        <div>
+            <img src="img/1.2.jpg" alt=""/>
+        </div>
+        <h4>1.3奇异果棒冰 Kiwi Ice Pop</h4>
+        <div>
+            <img src="img/1.3.jpg" alt=""/>
+        </div>
+        <h4>1.4夏日西瓜棒冰 Watermelon Ice Pop</h4>
+        <div>
+            <img src="img/1.4.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="footer">
+        <span>4</span>
+        <span class="read" onclick="read(this)">阅读全文</span>
+    </div>
+</div>
+<script  src="jquery-1.11.1.min.js"></script>
+<script  src="scroll.js"></script>
+<script>
+
+
+//    a.click()
+
+    //递归某个元素往上计算高度
+ /*   function getHeight(){
+        var arrT = [];
+        for (var i = 0; i < this.length; i++) {
+            var t = this[i].offsetTop,
+                    e = this[i];
+            while (e = e.offsetParent) t += e.offsetTop;
+
+            arrT.push(t);
+        }
+        return (arrT.length == 1) ? arrT[0] : arrT;
+    }
+*/
+
+    //
+function read(obj){
+
+    var changeTxt = $(obj).html();
+    var myItems = $(obj).parents('.items');
+
+    var myFooter = $(obj).parent();
+    var windowHeight = $(window).height()  //获取窗口的高度
+
+    if($(myItems)[0].offsetHeight<550){
+        myItems.removeClass('myHidden');
+        if(changeTxt == '阅读全文'){
+            $(obj).html('收起');
+            if(myItems.height()>windowHeight){  //当目标元素的展开高度大于窗口高度时，改变
+                myFooter.css({'position':'fixed'})
+            }
+        }
+    }else{
+            if(changeTxt == '收起'){
+
+                $(obj).html('阅读全文');
+                myItems.addClass('myHidden');
+                myFooter.css({'position':'absolute'});
+            }
+    }
+    current()
+
+}
+
+/*var allDiv=$('.items');
+var divScrollTop=[];
+for(var i=0;i<allDiv.length;i++){
+    divScrollTop.push(allDiv[i].offsetTop);
+    //[851, 1283, 1715, 2147]
+}
+/!*当前位置*!/
+var scrollTop=$('body').scrollTop();
+var screenH=innerHeight;
+var bace=scrollTop;
+var current='';
+console.log(screenH);
+for(var j=0;j<divScrollTop.length;j++){
+    if(divScrollTop[0]>bace){
+        current='#d0'; break;
+    }else if(bace>divScrollTop[j] && bace<divScrollTop[j+1]){
+        current='#d'+(j+1);
+        break;
+        //第j+1个div
+    }
+}*/
+</script>
+
+
+
+</body>
+</html>
